@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>เสี่ยวกัน Craft Furniture Thailand — Demo 2: Dark Luxury Editorial</title>
+    
+    <!-- Tailwind CSS with custom theme config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts: Prompt (Thai Modern), Plus Jakarta Sans (Display/EN), Noto Serif Thai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "deep-dark": "#0F0C0A",
+                        "surface-dark": "#1A1512",
+                        "card-dark": "#241D18",
+                        "primary-glow": "#D48B38",
+                        "primary-hover": "#E8A04D",
+                        "cyan-river": "#2A9D8F",
+                        "soft-cream": "#F4EFEA",
+                        "muted-gray": "#A39386",
+                        "border-dark": "#382D26"
+                    },
+                    fontFamily: {
+                        "sans": ["Prompt", "Plus Jakarta Sans", "sans-serif"],
+                        "display": ["Plus Jakarta Sans", "Prompt", "sans-serif"],
+                        "serif-th": ["Noto Serif Thai", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0F0C0A;
+            color: #F4EFEA;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .dark-glass {
+            background: rgba(26, 21, 18, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 139, 56, 0.25);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .glow-border {
+            border: 1px solid rgba(212, 139, 56, 0.4);
+            box-shadow: 0 0 25px rgba(212, 139, 56, 0.15);
+        }
+
+        .resin-gradient-text {
+            background: linear-gradient(135deg, #F4EFEA 0%, #D48B38 50%, #2A9D8F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-primary-glow selection:text-black">
+
+    <!-- Top Design Selector Switcher Banner -->
+    <div class="bg-card-dark text-soft-cream py-2.5 px-4 sticky top-0 z-50 shadow-xl border-b border-primary-glow/40">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+            <div class="flex items-center gap-2 font-medium">
+                <span class="material-symbols-outlined text-primary-glow text-lg">auto_awesome</span>
+                <span>เลือกสไตล์ Demo ให้ลูกค้าเลือก (Layout Demo Switcher):</span>
+            </div>
+            
+            <div class="flex items-center gap-2 flex-wrap justify-center">
+                <a href="index.html" class="px-3.5 py-1.5 rounded-full font-medium transition-all text-xs flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-soft-cream">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    <span>Demo 1: Glassmorphic Luxury Studio</span>
+                </a>
+
+                <a href="design-2.html" class="px-3.5 py-1.5 rounded-full font-medium transition-all text-xs flex items-center gap-1.5 bg-primary-glow text-black font-bold shadow-md">
+                    <span class="w-2 h-2 rounded-full bg-black"></span>
+                    <span>Demo 2: Dark Editorial Showcase (กำลังดูอยู่)</span>
+                </a>
+
+                <a href="design-3.html" class="px-3.5 py-1.5 rounded-full font-medium transition-all text-xs flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-soft-cream">
+                    <span class="w-2 h-2 rounded-full bg-stone-300"></span>
+                    <span>Demo 3: Organic Artisan Journal</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-[42px] z-40 w-full dark-glass border-b border-border-dark">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary-glow text-black font-extrabold flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-2xl">carpenter</span>
+                </div>
+                <div>
+                    <span class="font-bold text-xl tracking-tight text-soft-cream block leading-none">เสี่ยวกัน Craft</span>
+                    <span class="text-[10px] tracking-widest text-primary-glow uppercase font-semibold">Furniture Crafting Thailand</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-muted-gray">
+                <a href="#services-demo2" class="hover:text-primary-glow transition-colors">บริการงานคราฟต์</a>
+                <a href="#about-demo2" class="hover:text-primary-glow transition-colors">โรงงาน &amp; Company Profile</a>
+                <a href="#showcase-demo2" class="hover:text-primary-glow transition-colors">Masterpiece Gallery</a>
+                <a href="#process-demo2" class="hover:text-primary-glow transition-colors">ขั้นตอนการสั่งทำ</a>
+            </nav>
+
+            <button onclick="openModal()" class="bg-primary-glow hover:bg-primary-hover text-black px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg">edit_note</span>
+                <span>ส่งโจทย์ปรึกษาบริการ</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Split Hero Section: Left Copy + Stats, Right Big Feature Showcase -->
+        <section class="relative py-20 lg:py-28 px-6 max-w-7xl mx-auto reveal active">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-dark border border-primary-glow/40 text-primary-glow text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-cyan-river animate-ping"></span>
+                        <span>บริการทำ Furniture Crafting ตามสั่ง · อ.เมือง จ.นครราชสีมา</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                        ศิลปะแห่งไม้และเรซิ่น<br />
+                        <span class="resin-gradient-text">บริการทำ Furniture Crafting</span>
+                    </h1>
+
+                    <p class="text-lg text-muted-gray leading-relaxed font-light">
+                        เราคือผู้ผลิตและออกแบบงานตามสั่งเป็นหลัก ทั้งงานไม้จริง ไม้อัดปิดผิว งานลอยตัว งานบิวท์อิน<br/>
+                        <span class="text-soft-cream font-medium">"อะไรที่เจ้าอื่นทำเราก็ทำ และเราทำมากกว่าเจ้าอื่นแน่นอน โดยเฉพาะงานไม้ผสานเรซิ่นเราเป็นเจ้าหลักของประเทศแน่นอน"</span>
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="openModal()" class="bg-primary-glow hover:bg-primary-hover text-black px-8 py-4 rounded-xl font-bold text-base transition-all shadow-xl flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xl">draw</span>
+                            <span>ปรึกษาและออกแบบฟรี</span>
+                        </button>
+                        <a href="#services-demo2" class="border border-border-dark hover:border-primary-glow text-soft-cream px-8 py-4 rounded-xl font-medium text-base transition-all flex items-center gap-2">
+                            <span>ดูหมวดหมู่งานคราฟต์</span>
+                            <span class="material-symbols-outlined text-lg">arrow_downward</span>
+                        </a>
+                    </div>
+
+                    <!-- Counter Stats Bar -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-border-dark">
+                        <div>
+                            <span class="text-3xl font-extrabold text-primary-glow block">No.1</span>
+                            <span class="text-xs text-muted-gray">เจ้าหลักไม้เรซิ่นในไทย</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-extrabold text-soft-cream block">100%</span>
+                            <span class="text-xs text-muted-gray">Bespoke Made to Order</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-extrabold text-cyan-river block">โคราช</span>
+                            <span class="text-xs text-muted-gray">โรงงาน อ.เมือง นครราชสีมา</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Feature Hero Media Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden glow-border group aspect-[4/5] shadow-2xl">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2IZ5Gir-YCnkbfRT4oijXbdGY5oKCqm4LWSw6z0fxFPUjd9nuPbCwDCbC1gRNdYhB8WPxIk4p_ZaUrDFlv_YG-a0fA1tmSMfNe_iA_pofYxJswgiOeF8Uj5Bk_iyn1ScR01NwZnurFh23OAB6KmpL089oxCswPXeeHGbijHcQLzzB-inUs7EsJOZIhEtPMSIZKj-ibkfYZwrvJUa-BPABVFB6CaxgLeR3KSDZzfIiUrsFjVx_f4" alt="Resin River Table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-dark via-transparent to-transparent opacity-90 p-8 flex flex-col justify-end">
+                            <span class="text-xs font-bold text-primary-glow uppercase tracking-widest mb-1">Highlight Masterpiece</span>
+                            <h3 class="text-2xl font-bold text-soft-cream">Amber Glow River Table</h3>
+                            <p class="text-sm text-muted-gray font-light mt-1">โต๊ะไม้ผสานเรซิ่นสีทองคริสตัล หล่อสูญญากาศไร้ฟองอากาศ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Breakdown Section: Horizontal Dark Cards -->
+        <section class="py-20 bg-surface-dark border-y border-border-dark reveal" id="services-demo2">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-primary-glow uppercase tracking-widest block mb-2">Our Services Breakdown</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-soft-cream">5 หมวดหมู่บริการทำ Furniture Crafting</h2>
+                    </div>
+                    <p class="text-sm text-muted-gray max-w-md font-light">
+                        ออกแบบและผลิตตรงจากโรงงาน อ.เมือง จ.นครราชสีมา คุมงานโดยช่างผู้เชี่ยวชาญทุกขั้นตอน
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Service 1 -->
+                    <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-2xl">water_drop</span>
+                        </div>
+                        <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Highlight · เจ้าหลักของประเทศ</span>
+                        <h3 class="text-xl font-bold text-soft-cream mb-3">1. งานไม้ผสานเรซิ่น</h3>
+                        <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                            โต๊ะเรซิ่น River Table ชิ้นงานตกแต่งเรซิ่นใสคุณภาพสูง ไม่เหลือง ไม่แตกร้าว
+                        </p>
+                        <button onclick="openModalWithService('งานไม้ผสานเรซิ่น')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                            <span>ปรึกษาสั่งทำ</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-2xl">forest</span>
+                        </div>
+                        <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Solid Wood Craft</span>
+                        <h3 class="text-xl font-bold text-soft-cream mb-3">2. งานไม้จริงสั่งทำ</h3>
+                        <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                            ไม้จริงแผ่นเดียว (Live Edge) คัดสรรลายไม้ธรรมชาติขัดเคลือบเงาพรีเมียม
+                        </p>
+                        <button onclick="openModalWithService('งานไม้จริงสั่งทำ')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                            <span>ปรึกษาสั่งทำ</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-2xl">layers</span>
+                        </div>
+                        <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Veneer Craft</span>
+                        <h3 class="text-xl font-bold text-soft-cream mb-3">3. งานไม้อัดปิดผิว</h3>
+                        <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                            ปิดผิววีเนียร์เกรดส่งออก ตัดแต่งเนียนเรียบไร้รอยต่อ เหมาะกับดีไซน์โมเดิร์น
+                        </p>
+                        <button onclick="openModalWithService('งานไม้อัดปิดผิว')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                            <span>ปรึกษาสั่งทำ</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-2xl">chair</span>
+                        </div>
+                        <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Freestanding</span>
+                        <h3 class="text-xl font-bold text-soft-cream mb-3">4. งานเฟอร์นิเจอร์ลอยตัว</h3>
+                        <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                            โต๊ะทานข้าว โต๊ะทำงาน คอนโซลทีวี และเคาน์เตอร์บาร์ ปรับขนาดและสเปกตามใจ
+                        </p>
+                        <button onclick="openModalWithService('งานเฟอร์นิเจอร์ลอยตัว')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                            <span>ปรึกษาสั่งทำ</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group lg:col-span-2">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-river/20 text-cyan-river flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-2xl">other_houses</span>
+                        </div>
+                        <span class="text-xs font-bold text-cyan-river uppercase tracking-wider block mb-1">Architectural Built-in</span>
+                        <h3 class="text-xl font-bold text-soft-cream mb-3">5. งานตกแต่งบิวท์อินสั่งทำหน้างาน</h3>
+                        <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                            ทีมช่างเข้าวัดพื้นที่หน้างาน วาดแบบ 3D ผลิตตู้บิวท์อิน ผนังตกแต่ง ฟิตเข้ามุมไร้ช่องว่าง
+                        </p>
+                        <button onclick="openModalWithService('งานบิวท์อินสั่งทำหน้างาน')" class="text-sm font-semibold text-cyan-river group-hover:text-primary-glow flex items-center gap-1">
+                            <span>จองคิววัดหน้างานฟรี</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Profile Dark Statement Section -->
+        <section class="py-24 px-6 max-w-7xl mx-auto reveal" id="about-demo2">
+            <div class="bg-card-dark p-10 md:p-16 rounded-3xl glow-border relative overflow-hidden">
+                <div class="max-w-3xl mx-auto text-center space-y-6">
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-widest">Company Profile</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-soft-cream">เสี่ยวกัน Craft Furniture Thailand</h2>
+                    
+                    <p class="text-base md:text-xl text-soft-cream/90 font-light leading-relaxed">
+                        โรงงานตั้งอยู่ที่ <span class="text-primary-glow font-semibold">อ.เมือง จ.นครราชสีมา</span> เราคือผู้ผลิตและออกแบบงานตามสั่งเป็นหลัก งานไม้จริง ไม้อัดปิดผิว งานลอยตัว บิวท์อิน
+                    </p>
+
+                    <div class="p-6 rounded-2xl bg-surface-dark border border-border-dark text-amber-glow font-bold text-lg md:text-2xl italic leading-relaxed">
+                        "อะไรที่เจ้าอื่นทำเราก็ทำ และเราทำมากกว่าเจ้าอื่นแน่นอน โดยเฉพาะงานไม้ผสานเรซิ่นเราเป็นเจ้าหลักของประเทศแน่นอน"
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Masterpiece Gallery Dark Grid -->
+        <section class="py-20 bg-surface-dark border-t border-border-dark reveal" id="showcase-demo2">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-widest block mb-2">Masterpiece Gallery</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-soft-cream">ผลงาน Furniture Crafting เด่น</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rounded-2xl overflow-hidden bg-card-dark border border-border-dark group">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2IZ5Gir-YCnkbfRT4oijXbdGY5oKCqm4LWSw6z0fxFPUjd9nuPbCwDCbC1gRNdYhB8WPxIk4p_ZaUrDFlv_YG-a0fA1tmSMfNe_iA_pofYxJswgiOeF8Uj5Bk_iyn1ScR01NwZnurFh23OAB6KmpL089oxCswPXeeHGbijHcQLzzB-inUs7EsJOZIhEtPMSIZKj-ibkfYZwrvJUa-BPABVFB6CaxgLeR3KSDZzfIiUrsFjVx_f4" alt="Gallery 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-soft-cream">Amber Glow River Table</h3>
+                            <p class="text-xs text-muted-gray mt-1">โต๊ะไม้ผสานเรซิ่นเรืองแสงสีอำพัน</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden bg-card-dark border border-border-dark group">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFk3gfvuoEj0fLKGPnn93nxO8gO4zVYRFq09tW29SJY1l1FG80AbVk5tE8H8Gi9Vn9240oDvIqUI3JS73JLu8i5xwZcmVVPVWw0oKx03HwqVYoABuA8F5N5zbUVpFrAa9D9JlqghDgT7lALTz4PaV6crj2V_CqSp2ODyuKP1bW1sKH24cx61-F16GTycqvXvKcQMd_UxHR7bEYwYoMBM202dh7jpE2aZeq3cBJ9By3Ka7wefYeFCE" alt="Gallery 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-soft-cream">Live Edge Dining Table</h3>
+                            <p class="text-xs text-muted-gray mt-1">โต๊ะไม้จริงแผ่นเดียวขอบธรรมชาติ</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden bg-card-dark border border-border-dark group">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-kuUoExbgMmv80cOhy636lmkEnf79zob9s6ESq-qnkoy-lePYMBzhE8uDZp5NyKR0ke4y_iI36A82JP_THE0oOyWBAokraCC-XK84dV_Wwz1hoF4IybtHQHftBbTPxfrUy5tLwhFhEtrBBbp5Bcvr2tezJtdRhFT70M9l5WUy7P7cw9Ks9FAk0GI98Lv6fS4H9If2QsCVWVIAS_EVZSyVqVBPhHsRJ2vEZyU1XA4bk1LHdtB6yPg" alt="Gallery 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-soft-cream">Deep Sapphire Console</h3>
+                            <p class="text-xs text-muted-gray mt-1">คอนโซลเรซิ่นสีน้ำเงินลึก</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Step Horizontal Line -->
+        <section class="py-20 px-6 max-w-7xl mx-auto reveal" id="process-demo2">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold text-primary-glow uppercase tracking-widest block mb-2">Process Workflow</span>
+                <h2 class="text-3xl font-extrabold text-soft-cream">ขั้นตอนสั่งทำง่ายๆ 3 ขั้นตอน</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark">
+                    <span class="text-4xl font-extrabold text-primary-glow block mb-4">01</span>
+                    <h3 class="font-bold text-lg text-soft-cream mb-2">ปรึกษา &amp; วัดหน้างาน</h3>
+                    <p class="text-sm text-muted-gray font-light">แจ้งสเปก งบประมาณ และนัดวัดพื้นที่หน้างานจริง</p>
+                </div>
+
+                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark">
+                    <span class="text-4xl font-extrabold text-primary-glow block mb-4">02</span>
+                    <h3 class="font-bold text-lg text-soft-cream mb-2">ออกแบบ 3D &amp; เลือกวัสดุ</h3>
+                    <p class="text-sm text-muted-gray font-light">เขียนแบบ 3D สรุปไม้ วีเนียร์ หรือเฉดสีเรซิ่นตามสั่ง</p>
+                </div>
+
+                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark">
+                    <span class="text-4xl font-extrabold text-cyan-river block mb-4">03</span>
+                    <h3 class="font-bold text-lg text-soft-cream mb-2">ผลิต &amp; ส่งมอบติดตั้ง</h3>
+                    <p class="text-sm text-muted-gray font-light">ทีมช่างโรงงานขึ้นรูป ขัดเคลือบผิว จัดส่งและติดตั้งสมบูรณ์</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="inquire-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+            <div class="bg-card-dark rounded-2xl max-w-lg w-full p-8 shadow-2xl relative border border-primary-glow/40">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-muted-gray hover:text-white">
+                    <span class="material-symbols-outlined text-xl">close</span>
+                </button>
+                <h3 class="text-xl font-bold text-soft-cream mb-2">ส่งโจทย์ทำ Furniture Crafting</h3>
+                <p class="text-xs text-muted-gray mb-6">เสี่ยวกัน Craft Furniture Thailand (อ.เมือง จ.นครราชสีมา)</p>
+                <form onsubmit="event.preventDefault(); closeModal(); alert('บันทึกข้อมูลเรียบร้อยแล้ว!');" class="space-y-4">
+                    <input type="text" required placeholder="ชื่อของคุณ" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none" />
+                    <input type="text" required placeholder="เบอร์โทรศัพท์ / LINE ID" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none" />
+                    <select id="modal-service-select" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none">
+                        <option value="งานไม้ผสานเรซิ่น">งานไม้ผสานเรซิ่น (เจ้าหลักของประเทศ)</option>
+                        <option value="งานไม้จริงสั่งทำ">งานไม้จริงสั่งทำ</option>
+                        <option value="งานไม้อัดปิดผิว">งานไม้อัดปิดผิว</option>
+                        <option value="งานเฟอร์นิเจอร์ลอยตัว">งานเฟอร์นิเจอร์ลอยตัว</option>
+                        <option value="งานบิวท์อินสั่งทำหน้างาน">งานตกแต่งบิวท์อินสั่งทำ</option>
+                    </select>
+                    <textarea rows="3" placeholder="รายละเอียดเพิ่มเติม..." class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none"></textarea>
+                    <button type="submit" class="w-full bg-primary-glow text-black py-3.5 rounded-xl font-bold text-base hover:bg-primary-hover transition-all">ส่งข้อมูลประเมินราคาฟรี</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-dark border-t border-border-dark py-12 px-6 text-center text-xs text-muted-gray">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <p class="text-sm font-bold text-soft-cream">เสี่ยวกัน Craft Furniture Thailand — โรงงาน อ.เมือง จ.นครราชสีมา</p>
+            <p>© 2024 All rights reserved. บริการทำ Furniture Crafting ตามสั่งเป็นหลัก</p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        function openModal() {
+            document.getElementById('inquire-modal').classList.remove('hidden');
+            document.getElementById('inquire-modal').classList.add('flex');
+        }
+
+        function openModalWithService(serviceName) {
+            document.getElementById('modal-service-select').value = serviceName;
+            openModal();
+        }
+
+        function closeModal() {
+            document.getElementById('inquire-modal').classList.add('hidden');
+            document.getElementById('inquire-modal').classList.remove('flex');
+        }
+    </script>
+</body>
+
+</html>
