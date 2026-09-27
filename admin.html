@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ระบบหลังบ้าน Admin Management — เสี่ยวกัน Craft Furniture Thailand</title>
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+    
+    <!-- Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "deep-dark": "#0F0C0A",
+                        "surface-dark": "#1A1512",
+                        "card-dark": "#241D18",
+                        "primary-glow": "#D48B38",
+                        "primary-hover": "#E8A04D",
+                        "cyan-river": "#2A9D8F",
+                        "soft-cream": "#F4EFEA",
+                        "muted-gray": "#A39386",
+                        "border-dark": "#382D26"
+                    },
+                    fontFamily: {
+                        "sans": ["Prompt", "Plus Jakarta Sans", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0F0C0A;
+            color: #F4EFEA;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .dark-glass {
+            background: rgba(26, 21, 18, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 139, 56, 0.25);
+        }
+
+        .glow-border {
+            border: 1px solid rgba(212, 139, 56, 0.35);
+            box-shadow: 0 0 25px rgba(212, 139, 56, 0.1);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-primary-glow selection:text-black min-h-screen flex flex-col">
+
+    <!-- Top Admin Header Bar -->
+    <header class="sticky top-0 z-40 w-full dark-glass px-6 py-3 border-b border-border-dark flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <a href="index.html" target="_blank" title="ดูหน้าเว็บจริง" class="group">
+                <img src="images/logo.png" alt="SIAOKAN CRAFT Logo" class="h-10 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300" />
+            </a>
+            <div>
+                <span class="font-bold text-base text-soft-cream block leading-tight">เสี่ยวกัน Craft — Admin Dashboard</span>
+                <span class="text-[10px] text-primary-glow font-semibold tracking-wider uppercase">ระบบจัดการหลังบ้านเจ้าของเว็บ</span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 text-xs">
+            <span class="hidden sm:inline px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full font-medium flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>สถานะระบบ: เชื่อมต่อสมบูรณ์ (Online)</span>
+            </span>
+            <a href="index.html" class="px-3.5 py-1.5 rounded-xl bg-surface-dark border border-border-dark text-soft-cream hover:border-primary-glow transition-all flex items-center gap-1.5 font-medium">
+                <span class="material-symbols-outlined text-base">visibility</span>
+                <span>ดูหน้าเว็บไซต์จริง</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Admin Main Layout -->
+    <div class="flex-1 flex flex-col md:flex-row">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 bg-surface-dark border-r border-border-dark p-4 space-y-2 shrink-0">
+            <div class="px-3 py-2 text-[11px] font-bold text-muted-gray uppercase tracking-wider">
+                เมนูผู้ดูแลระบบ (Admin Menu)
+            </div>
+            <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-item w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm bg-primary-glow text-black transition-all">
+                <span class="material-symbols-outlined text-lg">dashboard</span>
+                <span>ภาพรวม Dashboard</span>
+            </button>
+
+            <button onclick="switchTab('leads')" id="nav-leads" class="nav-item w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium text-sm text-muted-gray hover:text-soft-cream hover:bg-card-dark transition-all">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-lg">inbox</span>
+                    <span>รายการขอเสนอราคา</span>
+                </div>
+                <span class="px-2 py-0.5 rounded-full bg-primary-glow text-black font-bold text-xs" id="lead-count-badge">4</span>
+            </button>
+
+            <button onclick="switchTab('portfolio')" id="nav-portfolio" class="nav-item w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm text-muted-gray hover:text-soft-cream hover:bg-card-dark transition-all">
+                <span class="material-symbols-outlined text-lg">photo_library</span>
+                <span>จัดการผลงาน Masterpiece</span>
+            </button>
+
+            <button onclick="switchTab('settings')" id="nav-settings" class="nav-item w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm text-muted-gray hover:text-soft-cream hover:bg-card-dark transition-all">
+                <span class="material-symbols-outlined text-lg">settings</span>
+                <span>ตั้งค่าเบอร์โทร &amp; LINE</span>
+            </button>
+
+            <div class="pt-6 border-t border-border-dark mt-6 space-y-3">
+                <div class="p-4 rounded-xl bg-card-dark border border-border-dark text-xs space-y-2">
+                    <span class="font-bold text-primary-glow block">💡 สำหรับนักพัฒนา / ส่งมอบงาน:</span>
+                    <p class="text-muted-gray font-light">สามารถเชื่อมต่อหลังบ้านนี้เข้ากับ Supabase, Firebase หรือ Google Sheets API เพื่อเก็บข้อมูลจริงถาวรได้ทันที</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="flex-1 p-6 md:p-8 overflow-y-auto">
+            
+            <!-- TAB 1: DASHBOARD OVERVIEW -->
+            <div id="tab-dashboard" class="tab-content space-y-8">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-soft-cream">ยินดีต้อนรับสู่ระบบหลังบ้าน เสี่ยวกัน Craft</h1>
+                    <p class="text-xs text-muted-gray mt-1">สรุปข้อมูลลูกค้าส่งโจทย์ เสนอราคา และผลงานในระบบประจำวัน</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-card-dark p-6 rounded-2xl border border-border-dark space-y-2">
+                        <div class="flex items-center justify-between text-muted-gray">
+                            <span class="text-xs font-semibold">โจทย์ขอราคาใหม่</span>
+                            <span class="material-symbols-outlined text-primary-glow text-xl">mark_email_unread</span>
+                        </div>
+                        <span class="text-3xl font-extrabold text-primary-glow block" id="stat-new-leads">4</span>
+                        <span class="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">trending_up</span> +2 รายการวันนี้
+                        </span>
+                    </div>
+
+                    <div class="bg-card-dark p-6 rounded-2xl border border-border-dark space-y-2">
+                        <div class="flex items-center justify-between text-muted-gray">
+                            <span class="text-xs font-semibold">ผลงาน Masterpiece ในเว็บ</span>
+                            <span class="material-symbols-outlined text-cyan-river text-xl">photo_album</span>
+                        </div>
+                        <span class="text-3xl font-extrabold text-soft-cream block">12</span>
+                        <span class="text-[11px] text-muted-gray">พร้อมอัปเดตแกลเลอรี</span>
+                    </div>
+
+                    <div class="bg-card-dark p-6 rounded-2xl border border-border-dark space-y-2">
+                        <div class="flex items-center justify-between text-muted-gray">
+                            <span class="text-xs font-semibold">ยอดผู้เข้าชมเดือนนี้</span>
+                            <span class="material-symbols-outlined text-amber-400 text-xl">analytics</span>
+                        </div>
+                        <span class="text-3xl font-extrabold text-amber-400 block">1,480</span>
+                        <span class="text-[11px] text-emerald-400 font-medium">เพิ่มขึ้น 24% จากเดือนก่อน</span>
+                    </div>
+
+                    <div class="bg-card-dark p-6 rounded-2xl border border-border-dark space-y-2">
+                        <div class="flex items-center justify-between text-muted-gray">
+                            <span class="text-xs font-semibold">อัตราการปิดขาย (Conversion)</span>
+                            <span class="material-symbols-outlined text-emerald-400 text-xl">task_alt</span>
+                        </div>
+                        <span class="text-3xl font-extrabold text-emerald-400 block">68%</span>
+                        <span class="text-[11px] text-muted-gray">จากผู้ขอใบเสนอราคา</span>
+                    </div>
+                </div>
+
+                <!-- Recent Leads Quick Preview Table -->
+                <div class="bg-card-dark rounded-3xl border border-border-dark p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-lg text-soft-cream">โจทย์ขอใบเสนอราคาล่าสุด (Recent Inquiries)</h3>
+                        <button onclick="switchTab('leads')" class="text-xs text-primary-glow font-bold hover:underline flex items-center gap-1">
+                            <span>ดูรายการทั้งหมด</span>
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-soft-cream">
+                            <thead class="bg-surface-dark text-muted-gray uppercase text-[10px] tracking-wider border-b border-border-dark">
+                                <tr>
+                                    <th class="p-3">ชื่อลูกค้า</th>
+                                    <th class="p-3">เบอร์โทร / LINE</th>
+                                    <th class="p-3">บริการที่สนใจ</th>
+                                    <th class="p-3">งบประมาณ</th>
+                                    <th class="p-3">วันที่ส่ง</th>
+                                    <th class="p-3">สถานะ</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border-dark" id="recent-leads-body">
+                                <tr>
+                                    <td class="p-3 font-bold">คุณสมชาย วงศ์สวัสดิ์</td>
+                                    <td class="p-3 text-primary-glow font-medium">081-999-8877 (LINE: somchai_vip)</td>
+                                    <td class="p-3">งานไม้ผสานเรซิ่น (Amber Gold 2.4m)</td>
+                                    <td class="p-3 text-emerald-400 font-bold">50,000 - 100,000 ฿</td>
+                                    <td class="p-3 text-muted-gray">27 ก.ย. 2026</td>
+                                    <td class="p-3"><span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 font-bold text-[10px]">รอติดต่อกลับ</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold">คุณวิภาดา มงคลกุล</td>
+                                    <td class="p-3 text-primary-glow font-medium">089-444-5566</td>
+                                    <td class="p-3">งานไม้จริงแผ่นเดียว (Live Edge Teak)</td>
+                                    <td class="p-3 text-emerald-400 font-bold">100,000 - 200,000 ฿</td>
+                                    <td class="p-3 text-muted-gray">27 ก.ย. 2026</td>
+                                    <td class="p-3"><span class="px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-400 font-bold text-[10px]">ส่งใบเสนอราคาแล้ว</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold">คุณอนันต์ (สถาปนิก)</td>
+                                    <td class="p-3 text-primary-glow font-medium">LINE: anan_arch</td>
+                                    <td class="p-3">งานตกแต่งบิวท์อิน คฤหาสน์โคราช</td>
+                                    <td class="p-3 text-emerald-400 font-bold">200,000+ ฿</td>
+                                    <td class="p-3 text-muted-gray">26 ก.ย. 2026</td>
+                                    <td class="p-3"><span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px]">นัดวัดหน้างานแล้ว</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: MANAGE LEADS -->
+            <div id="tab-leads" class="tab-content space-y-6 hidden">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold text-soft-cream">รายการแจ้งขอใบเสนอราคาจากลูกค้า</h1>
+                        <p class="text-xs text-muted-gray mt-1">จัดการรายชื่อลูกค้าที่ส่งโจทย์ผ่านหน้าเว็บไซต์</p>
+                    </div>
+
+                    <button onclick="addMockLead()" class="bg-primary-glow text-black px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-primary-hover transition-all flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-base">add</span>
+                        <span>จำลองเพิ่มลูกค้าใหม่</span>
+                    </button>
+                </div>
+
+                <div class="space-y-4" id="all-leads-container">
+                    <!-- Lead Card 1 -->
+                    <div class="bg-card-dark p-6 rounded-2xl border border-border-dark space-y-4">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-border-dark pb-4">
+                            <div>
+                                <span class="text-xs font-bold text-primary-glow">ID #LD-2026-004</span>
+                                <h3 class="text-lg font-bold text-soft-cream">คุณสมชาย วงศ์สวัสดิ์</h3>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-3 py-1 bg-amber-500/20 text-amber-400 font-bold text-xs rounded-full">รอติดต่อกลับ</span>
+                                <button onclick="alert('ส่งข้อความ LINE หรือโทรหา 081-999-8877')" class="px-3 py-1 bg-primary-glow text-black font-bold text-xs rounded-xl hover:bg-primary-hover">ติดต่อลูกค้า</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-muted-gray">
+                            <div>
+                                <span class="block text-soft-cream font-medium mb-1">📞 ข้อมูลติดต่อ:</span>
+                                <p>เบอร์โทร: <strong class="text-primary-glow">081-999-8877</strong></p>
+                                <p>LINE ID: <strong class="text-cyan-river">somchai_vip</strong></p>
+                            </div>
+                            <div>
+                                <span class="block text-soft-cream font-medium mb-1">🛠️ บริการ &amp; งบประมาณ:</span>
+                                <p>บริการ: <strong class="text-soft-cream">งานไม้ผสานเรซิ่น (Amber Gold 2.4m)</strong></p>
+                                <p>งบประมาณ: <strong class="text-emerald-400">50,000 - 100,000 บาท</strong></p>
+                            </div>
+                            <div>
+                                <span class="block text-soft-cream font-medium mb-1">📝 สเปก/รายละเอียดเพิ่มเติม:</span>
+                                <p class="italic text-soft-cream/80">"ต้องการโต๊ะทานข้าวเรซิ่นสีทองขอบธรรมชาติไม้ประดู่ส้ม 8 ที่นั่ง สำหรับบ้านเดี่ยว อ.เมือง โคราช"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Card 2 -->
+                    <div class="bg-card-dark p-6 rounded-2xl border border-border-dark space-y-4">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-border-dark pb-4">
+                            <div>
+                                <span class="text-xs font-bold text-primary-glow">ID #LD-2026-003</span>
+                                <h3 class="text-lg font-bold text-soft-cream">คุณวิภาดา มงคลกุล</h3>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 font-bold text-xs rounded-full">ส่งใบเสนอราคาแล้ว</span>
+                                <button onclick="alert('ดูเอกสารใบเสนอราคา #QT-2026-003')" class="px-3 py-1 bg-surface-dark border border-border-dark text-soft-cream font-bold text-xs rounded-xl hover:border-primary-glow">ดูใบเสนอราคา</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-muted-gray">
+                            <div>
+                                <span class="block text-soft-cream font-medium mb-1">📞 ข้อมูลติดต่อ:</span>
+                                <p>เบอร์โทร: <strong class="text-primary-glow">089-444-5566</strong></p>
+                            </div>
+                            <div>
+                                <span class="block text-soft-cream font-medium mb-1">🛠️ บริการ &amp; งบประมาณ:</span>
+                                <p>บริการ: <strong class="text-soft-cream">งานไม้จริงแผ่นเดียว (Live Edge Teak)</strong></p>
+                                <p>งบประมาณ: <strong class="text-emerald-400">100,000 - 200,000 บาท</strong></p>
+                            </div>
+                            <div>
+                                <span class="block text-soft-cream font-medium mb-1">📝 รายละเอียด:</span>
+                                <p class="italic text-soft-cream/80">"สนใจไม้สักทองแผ่นเดียว 3 เมตร สำหรับห้องประชุมใหญ่ผู้บริหาร"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: MANAGE PORTFOLIO -->
+            <div id="tab-portfolio" class="tab-content space-y-6 hidden">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold text-soft-cream">จัดการผลงาน Masterpiece ในแกลเลอรี</h1>
+                        <p class="text-xs text-muted-gray mt-1">เพิ่ม แก้ไข หรือลบรูปผลงานโต๊ะเรซิ่นและงานไม้ที่แสดงหน้าเว็บ</p>
+                    </div>
+
+                    <button onclick="openAddWorkModal()" class="bg-primary-glow text-black px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-primary-hover transition-all flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-base">add_photo_alternate</span>
+                        <span>+ เพิ่มผลงานใหม่</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="portfolio-manage-grid">
+                    <!-- Manage Item 1 -->
+                    <div class="bg-card-dark rounded-2xl overflow-hidden border border-border-dark p-4 space-y-3">
+                        <img src="images/hero-resin.jpg" alt="Amber Glow" class="w-full h-40 object-cover rounded-xl" />
+                        <div>
+                            <span class="text-[10px] font-bold text-primary-glow uppercase">ไม้ผสานเรซิ่น</span>
+                            <h4 class="font-bold text-soft-cream text-base">Amber Glow Crystal River Table</h4>
+                            <p class="text-xs text-muted-gray mt-1">ส่งมอบคฤหาสน์ อ.เมือง จ.นครราชสีมา</p>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-border-dark text-xs">
+                            <button onclick="alert('เปิดแก้ไขผลงาน')" class="flex-1 py-1.5 bg-surface-dark border border-border-dark text-soft-cream rounded-lg hover:border-primary-glow">แก้ไข</button>
+                            <button onclick="alert('ลบผลงานนี้')" class="py-1.5 px-3 bg-red-500/10 text-red-400 rounded-lg hover:bg-red-500/20">ลบ</button>
+                        </div>
+                    </div>
+
+                    <!-- Manage Item 2 -->
+                    <div class="bg-card-dark rounded-2xl overflow-hidden border border-border-dark p-4 space-y-3">
+                        <img src="images/cyan-river.jpg" alt="Deep Sapphire" class="w-full h-40 object-cover rounded-xl" />
+                        <div>
+                            <span class="text-[10px] font-bold text-cyan-river uppercase">ไม้ผสานเรซิ่น</span>
+                            <h4 class="font-bold text-soft-cream text-base">Deep Turquoise Ocean Table</h4>
+                            <p class="text-xs text-muted-gray mt-1">โต๊ะประชุมไม้สักเรซิ่น 10 ที่นั่ง</p>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-border-dark text-xs">
+                            <button onclick="alert('เปิดแก้ไขผลงาน')" class="flex-1 py-1.5 bg-surface-dark border border-border-dark text-soft-cream rounded-lg hover:border-primary-glow">แก้ไข</button>
+                            <button onclick="alert('ลบผลงานนี้')" class="py-1.5 px-3 bg-red-500/10 text-red-400 rounded-lg hover:bg-red-500/20">ลบ</button>
+                        </div>
+                    </div>
+
+                    <!-- Manage Item 3 -->
+                    <div class="bg-card-dark rounded-2xl overflow-hidden border border-border-dark p-4 space-y-3">
+                        <img src="images/workshop.jpg" alt="Live Edge Teak" class="w-full h-40 object-cover rounded-xl" />
+                        <div>
+                            <span class="text-[10px] font-bold text-amber-400 uppercase">ไม้จริงแผ่นเดียว</span>
+                            <h4 class="font-bold text-soft-cream text-base">Live Edge Master Solid Padauk</h4>
+                            <p class="text-xs text-muted-gray mt-1">ไม้ประดู่จริงขัดเคลือบ High Gloss</p>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-border-dark text-xs">
+                            <button onclick="alert('เปิดแก้ไขผลงาน')" class="flex-1 py-1.5 bg-surface-dark border border-border-dark text-soft-cream rounded-lg hover:border-primary-glow">แก้ไข</button>
+                            <button onclick="alert('ลบผลงานนี้')" class="py-1.5 px-3 bg-red-500/10 text-red-400 rounded-lg hover:bg-red-500/20">ลบ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: SETTINGS -->
+            <div id="tab-settings" class="tab-content space-y-6 hidden">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-soft-cream">ตั้งค่าข้อมูลโรงงาน &amp; เว็บไซต์</h1>
+                    <p class="text-xs text-muted-gray mt-1">อัปเดตเบอร์โทร LINE ID และที่อยู่โรงงานที่จะแสดงบนหน้าเว็บหลัก</p>
+                </div>
+
+                <div class="bg-card-dark p-8 rounded-3xl border border-border-dark max-w-2xl space-y-6">
+                    <form onsubmit="event.preventDefault(); alert('บันทึกการตั้งค่าเรียบร้อยแล้ว!');" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-primary-glow uppercase mb-1">ชื่อโรงงาน / แบรนด์</label>
+                            <input type="text" value="เสี่ยวกัน Craft Furniture Thailand" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none" />
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-primary-glow uppercase mb-1">เบอร์โทรศัพท์ติดต่อ</label>
+                                <input type="text" value="081-234-5678" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-primary-glow uppercase mb-1">LINE Official ID</label>
+                                <input type="text" value="@siaokancraft" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-primary-glow uppercase mb-1">ที่อยู่โรงงาน</label>
+                            <textarea rows="3" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none">เลขที่ 88/9 หมู่ 4 ต.ในเมือง อ.เมือง จ.นครราชสีมา 30000</textarea>
+                        </div>
+
+                        <button type="submit" class="bg-primary-glow text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-primary-hover transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined">save</span>
+                            <span>บันทึกข้อมูลตั้งค่า</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all tabs
+            var contents = document.querySelectorAll('.tab-content');
+            contents.forEach(function(el) {
+                el.classList.add('hidden');
+            });
+
+            // Reset buttons
+            var navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(function(btn) {
+                btn.classList.remove('bg-primary-glow', 'text-black');
+                btn.classList.add('text-muted-gray');
+            });
+
+            // Show selected tab
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Highlight button
+            var activeBtn = document.getElementById('nav-' + tabId);
+            activeBtn.classList.add('bg-primary-glow', 'text-black');
+            activeBtn.classList.remove('text-muted-gray');
+        }
+
+        function addMockLead() {
+            var name = prompt('ระบุชื่อลูกค้าใหม่:', 'คุณประวิทย์ (จำลอง)');
+            if (name) {
+                alert('เพิ่มข้อมูลจำลองลูกค้า "' + name + '" เข้าสู่ระบบหลังบ้านเรียบร้อยแล้ว!');
+            }
+        }
+
+        function openAddWorkModal() {
+            var title = prompt('ชื่อผลงานใหม่:', 'โต๊ะเรซิ่น Amber Custom 3M');
+            if (title) {
+                alert('บันทึกผลงาน "' + title + '" เข้าสู่แกลเลอรีเรียบร้อยแล้ว!');
+            }
+        }
+    </script>
+</body>
+
+</html>

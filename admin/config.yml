@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "portfolio"
+    label: "ผลงาน Masterpiece"
+    folder: "data/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ชื่อผลงาน", name: "title", widget: "string"}
+      - {label: "หมวดหมู่", name: "category", widget: "select", options: ["งานไม้ผสานเรซิ่น", "งานไม้จริงสั่งทำ", "งานไม้อัดปิดผิว", "งานเฟอร์นิเจอร์ลอยตัว", "งานบิวท์อิน"]}
+      - {label: "รูปภาพผลงาน", name: "image", widget: "image"}
+      - {label: "สเปกไม้/เรซิ่น", name: "spec", widget: "string"}
+      - {label: "สถานที่จัดส่ง", name: "location", widget: "string"}
+      - {label: "คำอธิบายรายละเอียด", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "ตั้งค่าข้อมูลร้าน & โรงงาน"
+    files:
+      - file: "data/settings.json"
+        label: "ข้อมูลติดต่อโรงงาน"
+        name: "factory_info"
+        fields:
+          - {label: "ชื่อแบรนด์", name: "brand_name", widget: "string", default: "เสี่ยวกัน Craft Furniture Thailand"}
+          - {label: "เบอร์โทรศัพท์", name: "phone", widget: "string", default: "081-234-5678"}
+          - {label: "LINE Official ID", name: "line_id", widget: "string", default: "@siaokancraft"}
+          - {label: "ที่อยู่โรงงาน", name: "address", widget: "text", default: "เลขที่ 88/9 หมู่ 4 ต.ในเมือง อ.เมือง จ.นครราชสีมา 30000"}

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>เกี่ยวกับโรงงาน & Company Profile — เสี่ยวกัน Craft Furniture Thailand</title>
+    <meta name="description" content="ประวัติและความเป็นมาของ เสี่ยวกัน Craft ผู้ผลิตและออกแบบ Furniture Crafting และเจ้าหลักงานไม้ผสานเรซิ่นของประเทศไทย โรงงาน อ.เมือง จ.นครราชสีมา" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "deep-dark": "#0F0C0A",
+                        "surface-dark": "#1A1512",
+                        "card-dark": "#241D18",
+                        "primary-glow": "#D48B38",
+                        "primary-hover": "#E8A04D",
+                        "cyan-river": "#2A9D8F",
+                        "soft-cream": "#F4EFEA",
+                        "muted-gray": "#A39386",
+                        "border-dark": "#382D26"
+                    },
+                    fontFamily: {
+                        "sans": ["Prompt", "Plus Jakarta Sans", "sans-serif"],
+                        "display": ["Plus Jakarta Sans", "Prompt", "sans-serif"],
+                        "serif-th": ["Noto Serif Thai", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0F0C0A;
+            color: #F4EFEA;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .dark-glass {
+            background: rgba(26, 21, 18, 0.88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 139, 56, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .glow-border {
+            border: 1px solid rgba(212, 139, 56, 0.35);
+            box-shadow: 0 0 30px rgba(212, 139, 56, 0.12);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-primary-glow selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 w-full dark-glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="images/logo.png" alt="SIAOKAN CRAFT Logo" class="h-12 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300" />
+                <div>
+                    <span class="font-bold text-xl tracking-tight text-soft-cream block leading-none">เสี่ยวกัน Craft</span>
+                    <span class="text-[10px] tracking-widest text-primary-glow uppercase font-semibold">Furniture Crafting Thailand</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="text-muted-gray hover:text-primary-glow transition-colors py-1">หน้าแรก</a>
+                <a href="services.html" class="text-muted-gray hover:text-primary-glow transition-colors py-1">บริการงานคราฟต์</a>
+                <a href="portfolio.html" class="text-muted-gray hover:text-primary-glow transition-colors py-1">ผลงาน Masterpiece</a>
+                <a href="about.html" class="text-primary-glow font-bold border-b-2 border-primary-glow py-1">เกี่ยวกับโรงงาน</a>
+                <a href="contact.html" class="text-muted-gray hover:text-primary-glow transition-colors py-1">ติดต่อเรา</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="openModal()" class="bg-primary-glow hover:bg-primary-hover text-black px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <span class="material-symbols-outlined text-lg">edit_note</span>
+                    <span>ส่งโจทย์ปรึกษาฟรี</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-soft-cream focus:outline-none p-2">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card-dark border-b border-border-dark px-6 py-4 space-y-3">
+            <a href="index.html" class="block text-muted-gray hover:text-primary-glow text-base py-1">หน้าแรก</a>
+            <a href="services.html" class="block text-muted-gray hover:text-primary-glow text-base py-1">บริการงานคราฟต์</a>
+            <a href="portfolio.html" class="block text-muted-gray hover:text-primary-glow text-base py-1">ผลงาน Masterpiece</a>
+            <a href="about.html" class="block text-primary-glow font-bold text-base py-1">เกี่ยวกับโรงงาน</a>
+            <a href="contact.html" class="block text-muted-gray hover:text-primary-glow text-base py-1">ติดต่อเรา</a>
+            <button onclick="openModal(); toggleMobileMenu();" class="w-full mt-2 bg-primary-glow text-black py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-lg">edit_note</span>
+                <span>ส่งโจทย์ปรึกษาฟรี</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Title Header -->
+        <section class="py-16 bg-surface-dark border-b border-border-dark reveal active">
+            <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+                <span class="px-4 py-1.5 rounded-full bg-card-dark border border-primary-glow/40 text-primary-glow text-xs font-semibold uppercase tracking-wider inline-block">
+                    Company Profile &amp; Craftsmanship Standards
+                </span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-soft-cream">เกี่ยวกับ เสี่ยวกัน Craft Furniture Thailand</h1>
+                <p class="text-muted-gray max-w-2xl mx-auto font-light text-base leading-relaxed">
+                    โรงงานผลิตและออกแบบงานตามสั่งเป็นหลัก อ.เมือง จ.นครราชสีมา มุ่งมั่นสร้างสรรค์งานไม้จริง ไม้อัดปิดผิว และงานไม้ผสานเรซิ่นระดับชั้นนำของประเทศ
+                </p>
+            </div>
+        </section>
+
+        <!-- Company Quote Highlight Section -->
+        <section class="py-20 px-6 max-w-7xl mx-auto reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-widest">About Our Philosophy</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-soft-cream leading-tight">
+                        ผู้นำด้าน Furniture Crafting และเจ้าหลักไม้เรซิ่นแห่งประเทศไทย
+                    </h2>
+                    <p class="text-muted-gray leading-relaxed font-light">
+                        <strong>เสี่ยวกัน Craft Furniture Thailand</strong> เริ่มต้นขึ้นจาก passion ในเสน่ห์ลวดลายของไม้จริงธรรมชาติ ผสานกับงานคราฟต์สมัยใหม่อย่างอีพ็อกซี่เรซิ่นใส (Epoxy Resin Craftsmanship) 
+                    </p>
+                    <div class="p-6 rounded-2xl bg-card-dark border border-primary-glow/40 text-primary-glow font-bold text-lg italic leading-relaxed">
+                        "อะไรที่เจ้าอื่นทำเราก็ทำ และเราทำมากกว่าเจ้าอื่นแน่นอน โดยเฉพาะงานไม้ผสานเรซิ่นเราเป็นเจ้าหลักของประเทศแน่นอน"
+                    </div>
+                    <p class="text-sm text-muted-gray font-light leading-relaxed">
+                        โรงงานของเราตั้งอยู่ที่ <strong class="text-soft-cream">อ.เมือง จ.นครราชสีมา</strong> ควบคุมการผลิตเองทุกขั้นตอน ไม่ผ่านนายหน้า เพื่อให้ลูกค้าได้รับชิ้นงานคุณภาพตรงสเปกที่สุดในราคาจริงจากโรงงาน
+                    </p>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="rounded-3xl overflow-hidden glow-border aspect-4/3 shadow-2xl">
+                        <img src="images/workshop.jpg" alt="Siaokan Craft Factory Workshop" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 Pillars of Standard -->
+        <section class="py-20 bg-surface-dark border-y border-border-dark reveal">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 space-y-3">
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-widest">Why Choose Siaokan Craft</span>
+                    <h2 class="text-3xl font-extrabold text-soft-cream">4 จุดเด่นที่ทำให้เราเหนือกว่า</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Pillar 1 -->
+                    <div class="bg-card-dark p-8 rounded-3xl border border-border-dark space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-glow/10 text-primary-glow flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">factory</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-soft-cream">1. โรงงานผู้ผลิตตรง</h3>
+                        <p class="text-xs text-muted-gray font-light leading-relaxed">
+                            โรงงาน อ.เมือง โคราช ผลิตเอง ไม่ผ่านคนกลาง ปรับสเปกและควบคุมงบประมาณได้ยืดหยุ่น 100%
+                        </p>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="bg-card-dark p-8 rounded-3xl border border-border-dark space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-glow/10 text-primary-glow flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">science</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-soft-cream">2. เจ้าหลักไม้เรซิ่น</h3>
+                        <p class="text-xs text-muted-gray font-light leading-relaxed">
+                            ระบบหล่อเรซิ่นสูญญากาศ vacuum ไร้ฟองอากาศ เกรดพรีเมียม UV Resistant ไม่เหลืองง่าย
+                        </p>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="bg-card-dark p-8 rounded-3xl border border-border-dark space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-glow/10 text-primary-glow flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">verified</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-soft-cream">3. ไม้จริงคุณภาพอบแห้ง</h3>
+                        <p class="text-xs text-muted-gray font-light leading-relaxed">
+                            ไม้อบแห้ง Kiln Dried ควบคุมความชื้นไม่เกิน 12% ป้องกันการบิดงอหรือแตกร้าวในระยะยาว
+                        </p>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="bg-card-dark p-8 rounded-3xl border border-border-dark space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-glow/10 text-primary-glow flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">handshake</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-soft-cream">4. ดูแลและติดตั้งทั่วประเทศ</h3>
+                        <p class="text-xs text-muted-gray font-light leading-relaxed">
+                            บริการวัดพื้นที่หน้างาน จัดส่งอย่างปลอดภัย พร้อมการรับประกันและบริการขัดเคลือบผิว
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Factory Visit Invitation Banner -->
+        <section class="py-20 px-6 max-w-7xl mx-auto reveal">
+            <div class="bg-gradient-to-r from-card-dark via-surface-dark to-card-dark p-10 md:p-16 rounded-3xl glow-border flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-4 max-w-xl">
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-widest">Visit Our Workshop</span>
+                    <h2 class="text-3xl font-extrabold text-soft-cream">เชิญเข้ามาชมโรงงาน &amp; เลือกแผ่นไม้จริงด้วยตัวเอง</h2>
+                    <p class="text-sm text-muted-gray font-light leading-relaxed">
+                        สัมผัสลายไม้ดิบ เลือกโทนสีเรซิ่น และพูดคุยกับทีมช่างฝีมือโดยตรงได้ที่โรงงาน อ.เมือง จ.นครราชสีมา (นัดหมายล่วงหน้า)
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+                    <a href="contact.html" class="bg-primary-glow text-black px-8 py-4 rounded-xl font-bold text-sm hover:bg-primary-hover transition-all flex items-center gap-2 justify-center">
+                        <span class="material-symbols-outlined">calendar_month</span>
+                        <span>นัดเข้าชมโรงงานโคราช</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Form -->
+    <div id="inquire-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="bg-card-dark rounded-2xl max-w-lg w-full p-8 shadow-2xl relative border border-primary-glow/40">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-muted-gray hover:text-white">
+                <span class="material-symbols-outlined text-xl">close</span>
+            </button>
+            <h3 class="text-xl font-bold text-soft-cream mb-1">ส่งโจทย์ทำ Furniture Crafting</h3>
+            <p class="text-xs text-muted-gray mb-6">เสี่ยวกัน Craft Furniture Thailand (อ.เมือง จ.นครราชสีมา)</p>
+            <form onsubmit="event.preventDefault(); closeModal(); alert('ส่งข้อมูลประเมินราคาเรียบร้อยแล้ว! ทีมงานจะติดต่อกลับภายใน 24 ชม.');" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-muted-gray mb-1">ชื่อของคุณ</label>
+                    <input type="text" required placeholder="เช่น คุณสมชาย" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none" />
+                </div>
+                <div>
+                    <label class="block text-xs text-muted-gray mb-1">เบอร์โทรศัพท์ / LINE ID</label>
+                    <input type="text" required placeholder="08X-XXX-XXXX หรือ LINE ID" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none" />
+                </div>
+                <div>
+                    <label class="block text-xs text-muted-gray mb-1">ประเภทบริการที่สนใจ</label>
+                    <select id="modal-service-select" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none">
+                        <option value="งานไม้ผสานเรซิ่น">1. งานไม้ผสานเรซิ่น (เจ้าหลักของประเทศ)</option>
+                        <option value="งานไม้จริงสั่งทำ">2. งานไม้จริงสั่งทำ (Live Edge / Solid Wood)</option>
+                        <option value="งานไม้อัดปิดผิว">3. งานไม้อัดปิดผิว (Veneer Craft)</option>
+                        <option value="งานเฟอร์นิเจอร์ลอยตัว">4. งานเฟอร์นิเจอร์ลอยตัว</option>
+                        <option value="งานบิวท์อินสั่งทำหน้างาน">5. งานตกแต่งบิวท์อินสั่งทำ</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs text-muted-gray mb-1">รายละเอียดแบบ / ขนาดที่ต้องการ (ถ้ามี)</label>
+                    <textarea rows="3" placeholder="ระบุขนาด เช่น โต๊ะทานข้าว 2.4x1.0 เมตร หรือแนวทางสไตล์ที่ชอบ..." class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary-glow text-black py-3.5 rounded-xl font-bold text-base hover:bg-primary-hover transition-all flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">send</span>
+                    <span>ส่งข้อมูลประเมินราคาฟรี</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-dark border-t border-border-dark py-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs text-muted-gray">
+            <div class="space-y-3 md:col-span-2">
+                <div class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="SIAOKAN CRAFT Logo" class="h-10 w-auto object-contain" />
+                    <span class="font-bold text-lg text-soft-cream">เสี่ยวกัน Craft Furniture Thailand</span>
+                </div>
+                <p class="font-light leading-relaxed max-w-md">
+                    โรงงานผลิตและออกแบบ Furniture Crafting ตามสั่งเป็นหลัก งานไม้จริง ไม้อัดปิดผิว งานลอยตัว งานบิวท์อิน และผู้เชี่ยวชาญงานไม้ผสานเรซิ่นเจ้าหลักของประเทศไทย
+                </p>
+                <p class="text-primary-glow font-medium">📍 อ.เมือง จ.นครราชสีมา (โคราช)</p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-soft-cream text-sm mb-3">เมนูเว็บไซต์</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-primary-glow transition-colors">หน้าแรก</a></li>
+                    <li><a href="services.html" class="hover:text-primary-glow transition-colors">บริการงานคราฟต์</a></li>
+                    <li><a href="portfolio.html" class="hover:text-primary-glow transition-colors">ผลงาน Masterpiece</a></li>
+                    <li><a href="about.html" class="hover:text-primary-glow transition-colors">เกี่ยวกับโรงงาน</a></li>
+                    <li><a href="contact.html" class="hover:text-primary-glow transition-colors">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-soft-cream text-sm mb-3">ติดต่อโรงงาน</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-glow text-base">call</span> 081-234-5678</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-glow text-base">chat</span> LINE: @siaokancraft</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-glow text-base">location_on</span> อ.เมือง จ.นครราชสีมา</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-glow text-base">schedule</span> จันทร์ - เสาร์: 08:30 - 17:30 น.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-6 border-t border-border-dark text-center text-xs text-muted-gray">
+            <p>© 2026 เสี่ยวกัน Craft Furniture Thailand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 80) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        function toggleMobileMenu() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openModal() {
+            document.getElementById('inquire-modal').classList.remove('hidden');
+            document.getElementById('inquire-modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('inquire-modal').classList.add('hidden');
+            document.getElementById('inquire-modal').classList.remove('flex');
+        }
+    </script>
+</body>
+
+</html>
