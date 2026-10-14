@@ -18,11 +18,11 @@
                 <div>
                     <label class="block text-xs text-muted-gray mb-1">ประเภทบริการที่สนใจ</label>
                     <select id="modal-service-select" class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-border-dark text-soft-cream text-sm focus:border-primary-glow focus:outline-none">
-                        <option value="งานไม้ผสานเรซิ่น">1. งานไม้ผสานเรซิ่น (เจ้าหลักของประเทศ)</option>
-                        <option value="งานไม้จริงสั่งทำ">2. งานไม้จริงสั่งทำ (Live Edge / Solid Wood)</option>
-                        <option value="งานไม้อัดปิดผิว">3. งานไม้อัดปิดผิว (Veneer Craft)</option>
-                        <option value="งานเฟอร์นิเจอร์ลอยตัว">4. งานเฟอร์นิเจอร์ลอยตัว</option>
-                        <option value="งานบิวท์อินสั่งทำหน้างาน">5. งานตกแต่งบิวท์อินสั่งทำ</option>
+                        <option value="งานไม้ผสานเรซิ่น">1. งานไม้เรซิ่น & โต๊ะเรซิ่นสั่งผลิต (ผู้ผลิตรายใหญ่ในไทย)</option>
+                        <option value="งานบิวท์อินโคราช">2. บิวท์อินโคราช & ตกแต่งภายใน (ทีมช่างเสี่ยวกัน)</option>
+                        <option value="เฟอร์นิเจอร์สั่งทำ">3. เฟอร์นิเจอร์สั่งทำ & งานไม้สั่งทำ (ไม่มีขั้นต่ำ)</option>
+                        <option value="รับสร้างร้านโคราช">4. รับสร้างร้านโคราช & ร้านค้าในห้าง (ระบบน้ำ/ไฟ/พื้น)</option>
+                        <option value="รีโนเวทบ้านโคราช">5. รีโนเวทบ้านโคราช & ปรับปรุงอาคารร้านค้า</option>
                     </select>
                 </div>
                 <div>
@@ -46,7 +46,7 @@
                     <span class="font-bold text-lg text-soft-cream"><?php bloginfo('name'); ?></span>
                 </div>
                 <p class="font-light leading-relaxed max-w-md">
-                    โรงงานผลิตและออกแบบ Furniture Crafting ตามสั่งเป็นหลัก งานไม้จริง ไม้อัดปิดผิว งานลอยตัว งานบิวท์อิน และผู้เชี่ยวชาญงานไม้ผสานเรซิ่นเจ้าหลักของประเทศไทย
+                    โรงงานผลิตและออกแบบเฟอร์นิเจอร์สั่งทำ งานไม้สั่งทำ บิวท์อินโคราช รับสร้างร้านโคราช รีโนเวทบ้านโคราช และผู้เชี่ยวชาญงานไม้เรซิ่นเจ้าหลักของประเทศไทย
                 </p>
                 <p class="text-primary-glow font-medium">📍 อ.เมือง จ.นครราชสีมา (โคราช)</p>
             </div>

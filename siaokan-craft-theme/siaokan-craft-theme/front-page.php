@@ -14,16 +14,16 @@ get_header();
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-dark border border-primary-glow/40 text-primary-glow text-xs font-semibold uppercase tracking-wider">
                     <span class="w-2 h-2 rounded-full bg-cyan-river animate-ping"></span>
-                    <span>รับทำ Furniture Crafting ตามสั่ง · โรงงาน อ.เมือง จ.นครราชสีมา</span>
+                    <span>โรงงานเฟอร์นิเจอร์สั่งทำ งานไม้เรซิ่น บิวท์อินโคราช · อ.เมือง จ.นครราชสีมา</span>
                 </div>
 
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                    ศิลปะแห่งไม้และเรซิ่น<br />
-                    <span class="resin-gradient-text">บริการทำ Furniture Crafting</span>
+                    เฟอร์นิเจอร์สั่งทำ งานไม้เรซิ่น<br />
+                    <span class="resin-gradient-text">บิวท์อินโคราช รับสร้างร้าน รีโนเวทบ้าน</span>
                 </h1>
 
                 <p class="text-lg text-muted-gray leading-relaxed font-light">
-                    เราคือผู้ผลิตและออกแบบงานตามสั่งเป็นหลัก ทั้งงานไม้จริง ไม้อัดปิดผิว งานลอยตัว งานบิวท์อิน<br/>
+                    โรงงานผู้ผลิตและออกแบบเฟอร์นิเจอร์สั่งทำ งานไม้สั่งทำ บิวท์อินโคราช รับสร้างร้านโคราช และรีโนเวทบ้านโคราช<br/>
                     <span class="text-soft-cream font-medium">"อะไรที่เจ้าอื่นทำเราก็ทำ และเราทำมากกว่าเจ้าอื่นแน่นอน โดยเฉพาะงานไม้ผสานเรซิ่นเราเป็นเจ้าหลักของประเทศแน่นอน"</span>
                 </p>
 
@@ -58,11 +58,11 @@ get_header();
             <!-- Right Feature Hero Media Card -->
             <div class="lg:col-span-5 relative">
                 <div class="relative rounded-3xl overflow-hidden glow-border group aspect-[4/5] shadow-2xl">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/hero-resin.jpg" alt="Amber Glow Resin River Table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/hero-resin.jpg" alt="งานไม้เรซิ่น เสี่ยวกัน Craft โต๊ะเรซิ่น Amber Glow River Table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div class="absolute inset-0 bg-gradient-to-t from-deep-dark via-deep-dark/30 to-transparent p-8 flex flex-col justify-end">
                         <span class="text-xs font-bold text-primary-glow uppercase tracking-widest mb-1">Highlight Masterpiece</span>
-                        <h3 class="text-2xl font-bold text-soft-cream">Amber Glow River Table</h3>
-                        <p class="text-sm text-muted-gray font-light mt-1">โต๊ะไม้ผสานเรซิ่นสีทองคริสตัล หล่อสูญญากาศไร้ฟองอากาศ</p>
+                        <h3 class="text-2xl font-bold text-soft-cream">งานไม้เรซิ่น Amber Glow River Table</h3>
+                        <p class="text-sm text-muted-gray font-light mt-1">โต๊ะไม้ผสานเรซิ่นสีทองคริสตัล หล่อสูญญากาศไร้ฟองอากาศ มาตรฐานอันดับหนึ่ง</p>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@ get_header();
                     <span class="text-primary-glow">โดยเฉพาะงานไม้ผสานเรซิ่นเราเป็นเจ้าหลักของประเทศแน่นอน"</span>
                 </h2>
                 <p class="text-sm md:text-base text-muted-gray font-light">
-                    เสี่ยวกัน Craft Furniture Thailand — โรงงานผู้ผลิตและออกแบบตรง อ.เมือง จ.นครราชสีมา
+                    เสี่ยวกัน Craft — โรงงานเฟอร์นิเจอร์สั่งทำ งานไม้เรซิ่น บิวท์อินโคราช รับสร้างร้านโคราช และรีโนเวทบ้านโคราช
                 </p>
             </div>
         </div>
@@ -94,7 +94,7 @@ get_header();
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-4">
                 <div>
                     <span class="text-xs font-bold text-primary-glow uppercase tracking-widest block mb-2">Our Services Breakdown</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-soft-cream">5 หมวดหมู่บริการทำ Furniture Crafting</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-soft-cream">5 บริการหลัก — เฟอร์นิเจอร์สั่งทำ งานไม้เรซิ่น บิวท์อินโคราช</h2>
                 </div>
                 <a href="<?php echo esc_url(home_url('/services')); ?>" class="text-sm font-semibold text-primary-glow hover:underline flex items-center gap-1">
                     <span>ดูรายละเอียดบริการทั้งหมด</span>
@@ -103,15 +103,15 @@ get_header();
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Service 1 -->
+                <!-- Service 1: งานไม้เรซิ่น -->
                 <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
                     <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
                         <span class="material-symbols-outlined text-2xl">water_drop</span>
                     </div>
                     <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Highlight · เจ้าหลักของประเทศ</span>
-                    <h3 class="text-xl font-bold text-soft-cream mb-3">1. งานไม้ผสานเรซิ่น</h3>
+                    <h3 class="text-xl font-bold text-soft-cream mb-3">1. งานไม้เรซิ่น &amp; โต๊ะเรซิ่นสั่งผลิต</h3>
                     <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
-                        โต๊ะเรซิ่น River Table ชิ้นงานตกแต่งเรซิ่นใสคุณภาพสูง ไม่เหลือง ไม่แตกร้าว หล่อสูญญากาศไร้ฟองอากาศ
+                        งานไม้ผสานเรซิ่น โต๊ะ River Table เรซิ่นใสพิเศษ หล่อสูญญากาศ vacuum อบแข็งไร้ฟองอากาศ ทนรอยขีดข่วน ไม่เหลืองหมอง
                     </p>
                     <button onclick="openModalWithService('งานไม้ผสานเรซิ่น')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
                         <span>ปรึกษาสั่งทำ</span>
@@ -119,66 +119,66 @@ get_header();
                     </button>
                 </div>
 
-                <!-- Service 2 -->
+                <!-- Service 2: บิวท์อินโคราช -->
                 <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
-                        <span class="material-symbols-outlined text-2xl">forest</span>
+                    <div class="w-12 h-12 rounded-xl bg-cyan-river/20 text-cyan-river flex items-center justify-center mb-6 group-hover:bg-cyan-river group-hover:text-black transition-colors">
+                        <span class="material-symbols-outlined text-2xl">other_houses</span>
                     </div>
-                    <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Solid Wood Craft</span>
-                    <h3 class="text-xl font-bold text-soft-cream mb-3">2. งานไม้จริงสั่งทำ</h3>
+                    <span class="text-xs font-bold text-cyan-river uppercase tracking-wider block mb-1">Built-in Interior Craft</span>
+                    <h3 class="text-xl font-bold text-soft-cream mb-3">2. บิวท์อินโคราช &amp; ตกแต่งภายใน</h3>
                     <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
-                        ไม้จริงแผ่นเดียว (Live Edge) คัดสรรลายไม้ธรรมชาติ คัดไม้ประดู่ ไม้ชะลอม ไม้สัก ขัดเคลือบเงาพรีเมียม
+                        บริการบิวท์อินโคราช ครบวงจรโดยทีมช่างเสี่ยวกันของเราเอง วัดพื้นที่หน้างาน ออกแบบ 3D Render ตู้เสื้อผ้า เคาน์เตอร์บาร์ ฟิตเป๊ะ
                     </p>
-                    <button onclick="openModalWithService('งานไม้จริงสั่งทำ')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
-                        <span>ปรึกษาสั่งทำ</span>
+                    <button onclick="openModalWithService('งานบิวท์อินโคราช')" class="text-sm font-semibold text-cyan-river group-hover:text-primary-glow flex items-center gap-1">
+                        <span>จองคิววัดหน้างานฟรี</span>
                         <span class="material-symbols-outlined text-base">arrow_forward</span>
                     </button>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
-                        <span class="material-symbols-outlined text-2xl">layers</span>
-                    </div>
-                    <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Veneer Craft</span>
-                    <h3 class="text-xl font-bold text-soft-cream mb-3">3. งานไม้อัดปิดผิว</h3>
-                    <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
-                        ปิดผิววีเนียร์เกรดส่งออก ตัดแต่งเนียนเรียบไร้รอยต่อ เหมาะกับดีไซน์โมเดิร์น Luxury Minimal
-                    </p>
-                    <button onclick="openModalWithService('งานไม้อัดปิดผิว')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
-                        <span>ปรึกษาสั่งทำ</span>
-                        <span class="material-symbols-outlined text-base">arrow_forward</span>
-                    </button>
-                </div>
-
-                <!-- Service 4 -->
+                <!-- Service 3: เฟอร์นิเจอร์สั่งทำ & งานไม้สั่งทำ -->
                 <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
                     <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
                         <span class="material-symbols-outlined text-2xl">chair</span>
                     </div>
-                    <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Freestanding</span>
-                    <h3 class="text-xl font-bold text-soft-cream mb-3">4. งานเฟอร์นิเจอร์ลอยตัว</h3>
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Custom Furniture &amp; Woodcraft</span>
+                    <h3 class="text-xl font-bold text-soft-cream mb-3">3. เฟอร์นิเจอร์สั่งทำ &amp; งานไม้สั่งทำ</h3>
                     <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
-                        โต๊ะทานข้าว โต๊ะทำงาน คอนโซลทีวี และเคาน์เตอร์บาร์ ปรับขนาด ลายไม้ และสเปกตามใจ
+                        รับทำเฟอร์นิเจอร์สั่งทำ และงานไม้สั่งทำทุกชนิด ทั้งไม้จริง Live Edge ไม้อัดปิดผิววีเนียร์ งานเหล็กผสมไม้ ไม่มีขั้นต่ำ 1 ชิ้นก็ทำ
                     </p>
-                    <button onclick="openModalWithService('งานเฟอร์นิเจอร์ลอยตัว')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
-                        <span>ปรึกษาสั่งทำ</span>
+                    <button onclick="openModalWithService('เฟอร์นิเจอร์สั่งทำ')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                        <span>ส่งแบบประเมินราคา</span>
                         <span class="material-symbols-outlined text-base">arrow_forward</span>
                     </button>
                 </div>
 
-                <!-- Service 5 -->
-                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group lg:col-span-2">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-river/20 text-cyan-river flex items-center justify-center mb-6 group-hover:bg-cyan-river group-hover:text-black transition-colors">
-                        <span class="material-symbols-outlined text-2xl">other_houses</span>
+                <!-- Service 4: รับสร้างร้านโคราช -->
+                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
+                        <span class="material-symbols-outlined text-2xl">storefront</span>
                     </div>
-                    <span class="text-xs font-bold text-cyan-river uppercase tracking-wider block mb-1">Architectural Built-in</span>
-                    <h3 class="text-xl font-bold text-soft-cream mb-3">5. งานตกแต่งบิวท์อินสั่งทำหน้างาน</h3>
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Commercial &amp; Mall Projects</span>
+                    <h3 class="text-xl font-bold text-soft-cream mb-3">4. รับสร้างร้านโคราช &amp; ร้านค้าในห้าง</h3>
                     <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
-                        ทีมช่างเข้าวัดพื้นที่หน้างาน วาดแบบ 3D Render ผลิตตู้บิวท์อิน ผนังตกแต่ง ฟิตเข้ามุมไร้ช่องว่าง
+                        รับสร้างร้านโคราช คาเฟ่ ร้านอาหาร บูธแสดงสินค้า ช็อปในห้างสรรพสินค้า งานระบบน้ำ ไฟฟ้า ปูพื้นลามิเนต ส่งมอบงานตรงเวลา
                     </p>
-                    <button onclick="openModalWithService('งานบิวท์อินสั่งทำหน้างาน')" class="text-sm font-semibold text-cyan-river group-hover:text-primary-glow flex items-center gap-1">
-                        <span>จองคิววัดหน้างานฟรี</span>
+                    <button onclick="openModalWithService('รับสร้างร้านโคราช')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                        <span>ปรึกษาโปรเจ็คร้านค้า</span>
+                        <span class="material-symbols-outlined text-base">arrow_forward</span>
+                    </button>
+                </div>
+
+                <!-- Service 5: รีโนเวทบ้านโคราช -->
+                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group lg:col-span-2">
+                    <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
+                        <span class="material-symbols-outlined text-2xl">home_repair_service</span>
+                    </div>
+                    <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Renovation &amp; Restoration</span>
+                    <h3 class="text-xl font-bold text-soft-cream mb-3">5. รีโนเวทบ้านโคราช ปรับโฉมอาคาร &amp; ห้างร้าน</h3>
+                    <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                        บริการรีโนเวทบ้านโคราช ปรับปรุงบ้านเก่า อาคารพาณิชย์ โรงแรม ออฟฟิศ แปลงโฉมสเปซด้วยงานไม้คราฟต์ บิวท์อิน และงานระบบครบวงจร
+                    </p>
+                    <button onclick="openModalWithService('รีโนเวทบ้านโคราช')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                        <span>นัดประเมินพื้นที่รีโนเวท</span>
                         <span class="material-symbols-outlined text-base">arrow_forward</span>
                     </button>
                 </div>
