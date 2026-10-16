@@ -541,23 +541,29 @@
 
                     <!-- Service 5: รีโนเวทบ้านโคราช -->
                     <div
-                        class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-emerald-400 transition-all duration-300 group lg:col-span-2 shadow-xl">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-emerald-400/10 text-emerald-400 flex items-center justify-center mb-6 group-hover:bg-emerald-400 group-hover:text-black transition-colors">
-                            <span class="material-symbols-outlined text-2xl">handyman</span>
+                        class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-emerald-400 transition-all duration-300 group lg:col-span-2 shadow-xl flex flex-col md:flex-row gap-6 justify-between items-center">
+                        <div class="flex-1">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-emerald-400/10 text-emerald-400 flex items-center justify-center mb-6 group-hover:bg-emerald-400 group-hover:text-black transition-colors">
+                                <span class="material-symbols-outlined text-2xl">handyman</span>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-1">
+                                ปรับโฉมครบวงจร · รีโนเวทบ้านโคราช
+                            </span>
+                            <h3 class="text-xl font-bold text-soft-cream mb-3">5. รีโนเวทบ้านโคราช ปรับโฉมอาคาร &amp; ห้างร้าน</h3>
+                            <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                                บริการ<strong class="text-soft-cream font-medium">รีโนเวทบ้านโคราช</strong> ปรับโฉมบ้านเก่า ตึกแถว ทาวน์โฮม อาคารพาณิชย์ โรงแรม สำนักงาน งานโครงสร้างตงไม้ ปูพื้นไม้จริงขัดเคลือบเงา ให้สวยงาม ทันสมัย คุ้มค่างบประมาณ ด้วยทีมช่างประจำพื้นที่นครราชสีมา
+                            </p>
+                            <button onclick="openModalWithService('รีโนเวทบ้านโคราช')"
+                                class="text-sm font-semibold text-emerald-400 group-hover:text-primary-glow flex items-center gap-1">
+                                <span>ปรึกษางานรีโนเวทบ้านโคราช</span>
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </button>
                         </div>
-                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-1">
-                            ปรับโฉมครบวงจร · รีโนเวทบ้านโคราช
-                        </span>
-                        <h3 class="text-xl font-bold text-soft-cream mb-3">5. รีโนเวทบ้านโคราช ปรับโฉมอาคาร &amp; ห้างร้าน</h3>
-                        <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
-                            บริการ<strong class="text-soft-cream font-medium">รีโนเวทบ้านโคราช</strong> ปรับโฉมบ้านเก่า ตึกแถว ทาวน์โฮม อาคารพาณิชย์ โรงแรม สำนักงาน ให้สวยงาม ทันสมัย คุ้มค่างบประมาณ ด้วยโครงสร้างมาตรฐานสูงและทีมช่างประจำพื้นที่นครราชสีมา
-                        </p>
-                        <button onclick="openModalWithService('รีโนเวทบ้านโคราช')"
-                            class="text-sm font-semibold text-emerald-400 group-hover:text-primary-glow flex items-center gap-1">
-                            <span>ปรึกษางานรีโนเวทบ้านโคราช</span>
-                            <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </button>
+                        <div class="w-full md:w-56 h-48 rounded-xl overflow-hidden shrink-0 border border-border-dark relative group-hover:border-emerald-400/50 transition-colors">
+                            <img src="images/renovation-1-structure.jpg" alt="รีโนเวทบ้านโคราช งานโครงสร้างตงไม้และปูพื้นไม้จริง เสี่ยวกัน Craft" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/80 text-[10px] text-emerald-400 font-bold rounded border border-emerald-400/30">ภาพงานหน้างานจริง</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -629,14 +635,14 @@
                 </div>
 
                 <!-- Gallery 5 -->
-                <div class="rounded-2xl overflow-hidden bg-card-dark border border-border-dark hover:border-primary-glow transition-all duration-300 group">
+                <div class="rounded-2xl overflow-hidden bg-card-dark border border-border-dark hover:border-emerald-400 transition-all duration-300 group">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="images/craft-7-live-edge-slab.jpg" alt="รีโนเวทบ้านโคราช ปรับโฉมพื้นที่ด้วยงานไม้จริงสั่งทำ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-sm text-amber-400 text-xs font-bold rounded-full">รีโนเวทบ้านโคราช</span>
+                        <img src="images/renovation-2-woodfloor.jpg" alt="รีโนเวทบ้านโคราช ปรับโฉมอาคารและปูพื้นไม้จริงขัดเงา เสี่ยวกัน Craft" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-sm text-emerald-400 text-xs font-bold rounded-full">รีโนเวทบ้านโคราช</span>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-lg text-soft-cream">ปรับโฉมพื้นที่ด้วยงานไม้แผ่นเดียว Live Edge</h3>
-                        <p class="text-xs text-muted-gray mt-1">ผลงานรีโนเวทบ้านโคราชและอาคารพาณิชย์ เพิ่มความหรูหราทรงคุณค่า</p>
+                        <h3 class="font-bold text-lg text-soft-cream">รีโนเวทปรับโฉมอาคาร &amp; ปูพื้นไม้จริงขัดเงา</h3>
+                        <p class="text-xs text-muted-gray mt-1">ผลงานรีโนเวทบ้านโคราช แปลงโฉมสเปซด้วยงานไม้จริงและผนังอิฐโชว์แนว Modern Loft โดยทีมช่างเสี่ยวกัน</p>
                     </div>
                 </div>
 

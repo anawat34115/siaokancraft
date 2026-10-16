@@ -168,19 +168,25 @@ get_header();
                 </div>
 
                 <!-- Service 5: รีโนเวทบ้านโคราช -->
-                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group lg:col-span-2">
-                    <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
-                        <span class="material-symbols-outlined text-2xl">home_repair_service</span>
+                <div class="bg-card-dark p-8 rounded-2xl border border-border-dark hover:border-primary-glow transition-all duration-300 group lg:col-span-2 flex flex-col md:flex-row gap-6 justify-between items-center">
+                    <div class="flex-1">
+                        <div class="w-12 h-12 rounded-xl bg-primary-glow/10 text-primary-glow flex items-center justify-center mb-6 group-hover:bg-primary-glow group-hover:text-black transition-colors">
+                            <span class="material-symbols-outlined text-2xl">home_repair_service</span>
+                        </div>
+                        <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Renovation &amp; Restoration</span>
+                        <h3 class="text-xl font-bold text-soft-cream mb-3">5. รีโนเวทบ้านโคราช ปรับโฉมอาคาร &amp; ห้างร้าน</h3>
+                        <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
+                            บริการรีโนเวทบ้านโคราช ปรับปรุงบ้านเก่า อาคารพาณิชย์ โรงแรม ออฟฟิศ งานโครงสร้างตงไม้ ปูพื้นไม้จริงขัดเคลือบเงา แปลงโฉมสเปซด้วยงานไม้คราฟต์ บิวท์อิน และงานระบบครบวงจร
+                        </p>
+                        <button onclick="openModalWithService('รีโนเวทบ้านโคราช')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
+                            <span>นัดประเมินพื้นที่รีโนเวท</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </button>
                     </div>
-                    <span class="text-xs font-bold text-primary-glow uppercase tracking-wider block mb-1">Renovation &amp; Restoration</span>
-                    <h3 class="text-xl font-bold text-soft-cream mb-3">5. รีโนเวทบ้านโคราช ปรับโฉมอาคาร &amp; ห้างร้าน</h3>
-                    <p class="text-sm text-muted-gray font-light leading-relaxed mb-6">
-                        บริการรีโนเวทบ้านโคราช ปรับปรุงบ้านเก่า อาคารพาณิชย์ โรงแรม ออฟฟิศ แปลงโฉมสเปซด้วยงานไม้คราฟต์ บิวท์อิน และงานระบบครบวงจร
-                    </p>
-                    <button onclick="openModalWithService('รีโนเวทบ้านโคราช')" class="text-sm font-semibold text-primary-glow group-hover:text-primary-hover flex items-center gap-1">
-                        <span>นัดประเมินพื้นที่รีโนเวท</span>
-                        <span class="material-symbols-outlined text-base">arrow_forward</span>
-                    </button>
+                    <div class="w-full md:w-56 h-48 rounded-xl overflow-hidden shrink-0 border border-border-dark relative group-hover:border-primary-glow/50 transition-colors">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/renovation-1-structure.jpg" alt="รีโนเวทบ้านโคราช งานโครงสร้างตงไม้และปูพื้นไม้จริง" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/80 text-[10px] text-primary-glow font-bold rounded">ภาพงานหน้างานจริง</span>
+                    </div>
                 </div>
             </div>
         </div>
