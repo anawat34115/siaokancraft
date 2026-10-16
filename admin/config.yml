@@ -27,6 +27,7 @@ collections:
         name: "factory_info"
         fields:
           - {label: "ชื่อแบรนด์", name: "brand_name", widget: "string", default: "เสี่ยวกัน Craft Furniture Thailand"}
-          - {label: "เบอร์โทรศัพท์", name: "phone", widget: "string", default: "081-234-5678"}
+          - {label: "เบอร์โทรศัพท์", name: "phone", widget: "string", default: "080-1616011"}
+          - {label: "Facebook เพจร้าน", name: "facebook_url", widget: "string", default: "https://www.facebook.com/share/1Qj2ZyqUr2/?mibextid=wwXIfr"}
           - {label: "LINE Official ID", name: "line_id", widget: "string", default: "@siaokancraft"}
           - {label: "ที่อยู่โรงงาน", name: "address", widget: "text", default: "เลขที่ 88/9 หมู่ 4 ต.ในเมือง อ.เมือง จ.นครราชสีมา 30000"}
